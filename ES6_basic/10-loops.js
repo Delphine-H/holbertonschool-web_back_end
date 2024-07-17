@@ -6,4 +6,3 @@ export default function appendToEachArrayValue(array, appendString) {
 
   return resultArray;
 }
-  
