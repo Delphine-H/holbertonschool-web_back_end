@@ -1,6 +1,6 @@
 export function taskFirst() {
-    const TASK = 'I prefer const when I can.';
-    return TASK;
+    const task = 'I prefer const when I can.';
+    return task;
   }
 
   export function getLast() {
