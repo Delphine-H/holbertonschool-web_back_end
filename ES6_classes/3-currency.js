@@ -4,25 +4,24 @@ class Currency {
     this.name = name;
   }
 
-  // Getters
+  // code
   get code() {
     return this._code;
   }
 
+  set code(code) {
+    if (typeof code === 'string') this._code = code;
+  }
+
+  // name
   get name() {
     return this._name;
   }
 
-  // Setters
-  set code(newCode) {
-    if (typeof newCode === 'string') this._code = newCode;
+  set name(name) {
+    if (typeof name === 'string') this._name = name;
   }
 
-  set name(newName) {
-    if (typeof newName === 'string') this._name = newName;
-  }
-
-  // Method to display full currency
   displayFullCurrency() {
     return `${this.name} (${this.code})`;
   }
