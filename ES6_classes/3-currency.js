@@ -15,11 +15,11 @@ class Currency {
 
   // Setters
   set code(newCode) {
-    this._code = newCode;
+    if (typeof newCode === 'string') this._code = newCode;
   }
 
   set name(newName) {
-    this._name = newName;
+    if (typeof newName === 'string') this._name = newName;
   }
 
   // Method to display full currency
