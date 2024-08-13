@@ -1,4 +1,4 @@
-#!/usr/bin/python34
+#!/usr/bin/python3
 """basic annotation"""
 
 
