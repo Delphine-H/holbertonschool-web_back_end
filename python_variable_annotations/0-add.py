@@ -1,4 +1,6 @@
-#!/usr/bin/python3
-# type-annotated function that takes floats and return float
+#!/usr/bin/python34
+"""basic annotation"""
+
 def add(a: float, b: float) -> float:
-    return a + b
+    """type-annotated function that takes floats and return float"""
+    return (a + b)
