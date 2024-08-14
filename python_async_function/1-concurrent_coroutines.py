@@ -12,16 +12,12 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """Function that create tasks and return delays"""
     # Create a list of tasks
-    tasks = [wait_random(max_delay) for _ in range(n)]
+    tasks = []
+    for time in range(n):
+        tasks.append(wait_random(max_delay))
 
-    # Gather all tasks and get their results
-    delays = await asyncio.gather(*tasks)
-
-    # Sort delays without using sort() by using a sorting algorithm
-    sorted_delays = []
-    while delays:
-        min_delay = min(delays)
-        sorted_delays.append(min_delay)
-        delays.remove(min_delay)
-
-    return sorted_delays
+    delays = []
+    for task in asyncio.as_completed(tasks):
+        delay = await task
+        delays.append(delay)
+    return delays
