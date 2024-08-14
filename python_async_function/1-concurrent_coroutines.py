@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Python - Async"""
+"""This module runs a coroutine several times and
+returns delays in ascending order."""
 
 import asyncio
 from typing import List
