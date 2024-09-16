@@ -26,9 +26,9 @@ const getUserInput = () => new Promise((resolve, reject) => {
 // Execute the function and handle the promise
 getUserInput().then((name) => {
   // Output the user's name
-  process.stdout.write(`Your name is: ${name}\n`);
+  process.stdout.write(`Your name is: ${name}\r`);
   // Output the closing message
-  process.stdout.write('This important software is now closing\n');
+  process.stdout.write('\nThis important software is now closing\n');
   // Exit the process
   process.exit();
 }).catch((error) => {
