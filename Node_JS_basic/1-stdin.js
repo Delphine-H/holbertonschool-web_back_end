@@ -12,7 +12,7 @@ process.stdout.write('Welcome to Holberton School, what is your name?\n');
 // Read the user's input
 rl.question('', (name) => {
   // Display the user's name
-  process.stdout.write(`Your name is: ${name}\r\n`);
+  process.stdout.write(`Your name is: ${name}`);
 
   // Close the readline interface and display the closing message
   rl.close();
