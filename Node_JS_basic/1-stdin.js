@@ -1,26 +1,37 @@
 const readline = require('readline');
 
-// Create a readline interface to handle input and output
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+// Function to create a promise that resolves with the user's input
+const getUserInput = () => new Promise((resolve, reject) => {
+  // Create an interface to read from stdin and write to stdout
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  // Display the initial message
+  process.stdout.write('Welcome to Holberton School, what is your name?\n');
+
+  // Prompt for user input
+  rl.question('', (input) => {
+    // Resolve the promise with the user's input
+    resolve(input.trim());
+    // Close the readline interface
+    rl.close();
+  });
+
+  // Handle any errors
+  rl.on('error', (error) => reject(error));
 });
 
-// Display the initial message
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
-
-// Read the user's input
-rl.question('', (name) => {
-  // Display the user's name
+// Execute the function and handle the promise
+getUserInput().then((name) => {
+  // Output the user's name
   process.stdout.write(`Your name is: ${name}\n`);
-
-  // Close the readline interface and display the closing message
-  rl.close();
-});
-
-// Event listener for the 'close' event
-rl.on('close', () => {
-  // Display the closing message and exit the program
+  // Output the closing message
   process.stdout.write('This important software is now closing\n');
+  // Exit the process
   process.exit();
+}).catch((error) => {
+  console.error('Error:', error);
+  process.exit(1);
 });
