@@ -7,7 +7,7 @@ process.stdin.resume();
 process.stdin.on('readable', () => {
   const name = process.stdin.read();
   if (name) {
-    process.stdout.write(`Your name is: ${name.toString().trim()}`);
+    process.stdout.write(`Your name is: ${name.toString().trim()}\r`);
     if (process.stdin.isTTY) {
       // Interactive input (e.g., from a terminal)
       process.stdout.write('\nThis important software is now closing\n');
