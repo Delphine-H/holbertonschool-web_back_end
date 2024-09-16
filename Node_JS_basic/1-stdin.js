@@ -1,13 +1,16 @@
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 process.stdin.on('data', (input) => {
-  const name = input.toString().trim(); // Handle user input
-  process.stdout.write(`Your name is: ${name}\r`);
+  const name = input.toString().trim();
+  process.stdout.write(`Your name is: ${name}\r\n`);
 });
 
-// Handle EOF (End of File)
 process.stdin.on('end', () => {
-  // Properly close the program
-  process.stdout.write('\nThis important software is now closing');
-  process.exit(); // Cleanly terminate the program
+  process.stdout.write('This important software is now closing\n');
+  process.exit();
+});
+
+process.on('SIGINT', () => {
+  process.stdout.write('This important software is now closing\n');
+  process.exit();
 });
