@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 // Make the application listen on port 1245
 const PORT = 1245;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`); // Log server start
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 // Export the application
