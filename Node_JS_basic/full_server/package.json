@@ -1,18 +1,20 @@
 {
-    "name": "node_js_basics",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "dev": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv"
-    },
-    "dependencies": {
-      "express": "^4.17.1",
-      "csv-parse": "^5.0.0"
-    },
-    "devDependencies": {
-      "babel-register": "^6.26.0",
-      "babel-preset-env": "^1.7.0"
-    }
-  }
-  
+  "name": "node_js_basics",
+  "version": "1.0.0",
+  "description": "A basic Node.js project",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "csv-parse": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "eslint": "^7.2.0",
+    "mocha": "^8.0.1"
+  },
+  "scripts": {
+    "start": "babel-node server.js",
+    "test": "./node_modules/mocha/bin/mocha --require babel-register --exit full_server_index.test.js"
+  },
+  "license": "ISC"
+}
