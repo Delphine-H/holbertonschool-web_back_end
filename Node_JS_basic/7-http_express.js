@@ -9,7 +9,7 @@ app.get('/students', async (req, res) => {
     const data = await countStudents(process.argv[2]);
     res.send(`${title}${data.join('\n')}`);
   } catch (error) {
-    res.send(`${title} ${error.message}`);
+    res.send(`${title}${error.message}`);
   }
 });
 app.listen(1245);
